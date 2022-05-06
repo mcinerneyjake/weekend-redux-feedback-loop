@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       </header>
       <Feeling />
       <Understanding />
+      <Support />
     </div>
   );
 }
