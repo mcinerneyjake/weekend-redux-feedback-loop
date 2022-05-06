@@ -6,6 +6,7 @@ function Support() {
         <p>Support?</p>
         <input type='number' />
       </div>
+      <button>NEXT</button>
     </div>
   );
 }
