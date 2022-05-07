@@ -6,16 +6,33 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Header from '../Header/Header';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='App'>
-      <Header />
-      <Feeling />
-      <Understanding />
-      <Support />
-      <Comments />
-    </div>
+    <Router>
+      <div className='App'>
+        <Route exact path='/'>
+          <Header />
+        </Route>
+        <Route exact path='/feeling'>
+          <Header />
+          <Feeling />
+        </Route>
+        <Route exact path='/understanding'>
+          <Header />
+          <Understanding />
+        </Route>
+        <Route exact path='/support'>
+          <Header />
+          <Support />
+        </Route>
+        <Route exact path='/comments'>
+          <Header />
+          <Comments />
+        </Route>
+      </div>
+    </Router>
   );
 }
 
