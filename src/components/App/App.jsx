@@ -16,6 +16,7 @@ function App() {
       <Feeling />
       <Understanding />
       <Support />
+      <Comments />
     </div>
   );
 }
