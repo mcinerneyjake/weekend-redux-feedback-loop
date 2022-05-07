@@ -4,6 +4,7 @@ function Review() {
   let reviewFeelings = useSelector((store) => store.feelingReducer);
   let reviewUnderstanding = useSelector((store) => store.understandingReducer);
   let reviewSupport = useSelector((store) => store.supportReducer);
+  let reviewComments = useSelector((store) => store.commentReducer);
 
   return (
     <>
@@ -13,8 +14,8 @@ function Review() {
       </div>
       <h3>Feelings: {reviewFeelings}</h3>
       <h3>Understanding: {reviewUnderstanding}</h3>
-      <h3>Support: {reviewSupport} </h3>
-      <h3>Comments: </h3>
+      <h3>Support: {reviewSupport}</h3>
+      <h3>Comments: {reviewComments}</h3>
       <button>Submit</button>
     </>
   );
