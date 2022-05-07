@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 function Review() {
   let reviewFeelings = useSelector((store) => store.feelingReducer);
   let reviewUnderstanding = useSelector((store) => store.understandingReducer);
+  let reviewSupport = useSelector((store) => store.supportReducer);
 
   return (
     <>
@@ -12,7 +13,7 @@ function Review() {
       </div>
       <h3>Feelings: {reviewFeelings}</h3>
       <h3>Understanding: {reviewUnderstanding}</h3>
-      <h3>Support: </h3>
+      <h3>Support: {reviewSupport} </h3>
       <h3>Comments: </h3>
       <button>Submit</button>
     </>

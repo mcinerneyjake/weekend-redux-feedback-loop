@@ -27,7 +27,9 @@ const understandingReducer = (state = [], action) => {
 
 const supportReducer = (state = [], action) => {
   if (action.type === 'SET_SUPPORT') {
-    return action.payload;
+    if (action.payload > 0 && action.payload <= 5) {
+      return [action.payload];
+    }
   }
   return state;
 };
