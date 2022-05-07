@@ -3,12 +3,13 @@ function Review() {
     <>
       <div className='App-header'>
         <h1>Review</h1>
-        <h2>Please review your submissions.</h2>
+        <h4>Please review your submissions.</h4>
       </div>
       <h3>Feelings: </h3>
       <h3>Understanding: </h3>
       <h3>Support: </h3>
       <h3>Comments: </h3>
+      <button>Submit</button>
     </>
   );
 }
