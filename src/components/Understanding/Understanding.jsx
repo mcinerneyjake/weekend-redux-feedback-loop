@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 function Understanding() {
   let dispatch = useDispatch();
 
-  const [understanding, setUnderstanding] = useState(0);
+  const [understanding, setUnderstanding] = useState('');
 
   const addUnderstanding = (event) => {
     event.preventDefault();
@@ -21,7 +21,7 @@ function Understanding() {
     <div>
       <h1>How well are you understanding the content?</h1>
       <form onSubmit={addUnderstanding}>
-        <p>Please pick a number between 5 and 1 (5 High, 1 Low):</p>
+        <p>Please enter a number between 5 and 1 (5 High, 1 Low):</p>
         <input
           type='number'
           placeholder='Understanding'

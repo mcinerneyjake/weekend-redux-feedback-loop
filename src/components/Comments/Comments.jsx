@@ -22,7 +22,12 @@ function Comments() {
       <h1>Any comments you want to leave?</h1>
       <form onSubmit={addComment}>
         <p>Please enter your comments here:</p>
-        <input type='text' placeholder='Comment' value={comment} onChange={(event) => setComment(event.target.value)} />
+        <textarea
+          type='text'
+          placeholder='Comment'
+          value={comment}
+          onChange={(event) => setComment(event.target.value)}
+        />
         <button>NEXT</button>
       </form>
     </div>
