@@ -9,7 +9,9 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 const feelingReducer = (state = [], action) => {
   if (action.type === 'SET_FEELING') {
-    return action.payload;
+    if (action.payload > 0 && action.payload <= 5) {
+      return [action.payload];
+    }
   }
   return state;
 };
