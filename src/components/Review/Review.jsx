@@ -9,6 +9,7 @@ function Review() {
       <h3>Understanding: </h3>
       <h3>Support: </h3>
       <h3>Comments: </h3>
+      <button>Submit</button>
     </>
   );
 }
