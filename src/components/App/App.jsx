@@ -7,6 +7,7 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Header from '../Header/Header';
 import Review from '../Review/Review';
+import StartFeedback from '../StartFeedback/StartFeedback';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <div className='App'>
         <Route exact path='/'>
           <Header />
+          <StartFeedback />
         </Route>
         <Route exact path='/feeling'>
           <Header />
