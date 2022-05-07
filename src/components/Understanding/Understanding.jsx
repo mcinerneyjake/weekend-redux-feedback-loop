@@ -1,14 +1,37 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 function Understanding() {
-    return (
-      <div>
-        <h1>How well are you understanding the content?</h1>
-        <div>
-          <p>Understanding?</p>
-          <input type='number' />
-        </div>
+  let dispatch = useDispatch();
+
+  const [understanding, setUnderstanding] = useState(0);
+
+  const addUnderstanding = (event) => {
+    event.preventDefault();
+
+    console.log('In addUnderstanding:', understanding);
+
+    dispatch({
+      type: 'SET_UNDERSTANDING',
+      payload: understanding,
+    });
+  };
+
+  return (
+    <div>
+      <h1>How well are you understanding the content?</h1>
+      <form onSubmit={addUnderstanding}>
+        <p>Please pick a number between 5 and 1 (5 High, 1 Low):</p>
+        <input
+          type='number'
+          placeholder='Understanding'
+          value={understanding}
+          onChange={(event) => setUnderstanding(event.target.value)}
+        />
         <button>NEXT</button>
-      </div>
-    );
-  }
-  
-  export default Understanding;
+      </form>
+    </div>
+  );
+}
+
+export default Understanding;
