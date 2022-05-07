@@ -1,10 +1,36 @@
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 function Review() {
   let reviewFeelings = useSelector((store) => store.feelingReducer);
   let reviewUnderstanding = useSelector((store) => store.understandingReducer);
   let reviewSupport = useSelector((store) => store.supportReducer);
   let reviewComments = useSelector((store) => store.commentReducer);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    let newReview = {
+      feelings: reviewFeelings,
+      understanding: reviewUnderstanding,
+      support: reviewSupport,
+      comments: reviewComments,
+    };
+
+    console.log('Adding review to database:', { newReview });
+
+    axios({
+      method: 'POST',
+      url: '/feedback',
+      data: newReview,
+    })
+      .then((res) => {
+        alert('Thank you for your feedback!');
+      })
+      .catch((error) => {
+        console.log('Error in /feedback POST route:', error);
+      });
+  };
 
   return (
     <>
@@ -16,7 +42,9 @@ function Review() {
       <h3>Understanding: {reviewUnderstanding}</h3>
       <h3>Support: {reviewSupport}</h3>
       <h3>Comments: {reviewComments}</h3>
-      <button>Submit</button>
+      <form onSubmit={handleSubmit}>
+        <button>Submit</button>
+      </form>
     </>
   );
 }

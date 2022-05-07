@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 function Feeling() {
   let dispatch = useDispatch();
 
-  const [feeling, setFeeling] = useState(0);
+  const [feeling, setFeeling] = useState('');
 
   const addFeeling = (event) => {
     event.preventDefault();
@@ -21,7 +21,7 @@ function Feeling() {
     <div>
       <h1>How are you feeling today?</h1>
       <form onSubmit={addFeeling}>
-        <p>Please pick a number between 5 and 1 (5 High, 1 Low):</p>
+        <p>Please enter a number between 5 and 1 (5 High, 1 Low):</p>
         <input
           type='number'
           placeholder='Feeling'

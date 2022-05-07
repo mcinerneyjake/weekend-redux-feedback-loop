@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 function Support() {
   let dispatch = useDispatch();
 
-  const [support, setSupport] = useState(0);
+  const [support, setSupport] = useState('');
 
   const addSupport = (event) => {
     event.preventDefault();
@@ -21,7 +21,7 @@ function Support() {
     <div>
       <h1>How well are you being supported?</h1>
       <form onSubmit={addSupport}>
-        <p>Please pick a number between 5 and 1 (5 High, 1 Low):</p>
+        <p>Please enter a number between 5 and 1 (5 High, 1 Low):</p>
         <input
           type='number'
           placeholder='Support'
