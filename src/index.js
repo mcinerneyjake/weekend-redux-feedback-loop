@@ -7,36 +7,29 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
-const feelingReducer = (state = [], action) => {
+const feelingReducer = (state = 0, action) => {
   if (action.type === 'SET_FEELING') {
-    return [action.payload];
-  }
-  return state;
-};
-
-const understandingReducer = (state = [], action) => {
-  if (action.type === 'SET_UNDERSTANDING') {
-    return [action.payload];
-  }
-  return state;
-};
-
-const supportReducer = (state = [], action) => {
-  if (action.type === 'SET_SUPPORT') {
-    return [action.payload];
-  }
-  return state;
-};
-
-const commentReducer = (state = [], action) => {
-  if (action.type === 'SET_COMMENT') {
     return action.payload;
   }
   return state;
 };
 
-const reviewReducer = (state = [], action) => {
-  if (action.type === 'SET_REVIEW') {
+const understandingReducer = (state = 0, action) => {
+  if (action.type === 'SET_UNDERSTANDING') {
+    return action.payload;
+  }
+  return state;
+};
+
+const supportReducer = (state = 0, action) => {
+  if (action.type === 'SET_SUPPORT') {
+    return action.payload;
+  }
+  return state;
+};
+
+const commentReducer = (state = '', action) => {
+  if (action.type === 'SET_COMMENT') {
     return action.payload;
   }
   return state;
@@ -48,7 +41,6 @@ const reduxStore = createStore(
     understandingReducer,
     supportReducer,
     commentReducer,
-    reviewReducer,
   }),
   applyMiddleware(logger)
 );

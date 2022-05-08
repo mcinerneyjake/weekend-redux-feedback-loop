@@ -6,7 +6,7 @@ function Support() {
   let dispatch = useDispatch();
   const history = useHistory();
 
-  const [support, setSupport] = useState('');
+  const [support, setSupport] = useState(0);
 
   const addSupport = (event) => {
     event.preventDefault();
@@ -18,7 +18,7 @@ function Support() {
       payload: support,
     });
 
-    setSupport('');
+    setSupport(0);
 
     if (support > 0 && support <= 5) {
       goToNextPage();

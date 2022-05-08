@@ -3,10 +3,10 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 function Review() {
-  let reviewFeelings = useSelector((store) => store.feelingReducer);
-  let reviewUnderstanding = useSelector((store) => store.understandingReducer);
-  let reviewSupport = useSelector((store) => store.supportReducer);
-  let reviewComments = useSelector((store) => store.commentReducer);
+  let feeling = useSelector((store) => store.feelingReducer);
+  let understanding = useSelector((store) => store.understandingReducer);
+  let support = useSelector((store) => store.supportReducer);
+  let comments = useSelector((store) => store.commentReducer);
 
   const history = useHistory();
 
@@ -14,10 +14,10 @@ function Review() {
     event.preventDefault();
 
     let newReview = {
-      feelings: reviewFeelings,
-      understanding: reviewUnderstanding,
-      support: reviewSupport,
-      comments: reviewComments,
+      feeling,
+      understanding,
+      support,
+      comments,
     };
 
     console.log('Adding review to database:', { newReview });
@@ -28,7 +28,7 @@ function Review() {
       data: newReview,
     })
       .then((res) => {
-        alert('Thank you for your feedback!');
+        console.log(res);
       })
       .catch((error) => {
         console.log('Error in /feedback POST route:', error);
@@ -47,10 +47,10 @@ function Review() {
         <h1>Review</h1>
         <h4>Please review your submissions.</h4>
       </div>
-      <h3>Feelings: {reviewFeelings}</h3>
-      <h3>Understanding: {reviewUnderstanding}</h3>
-      <h3>Support: {reviewSupport}</h3>
-      <h3>Comments: {reviewComments}</h3>
+      <h3>Feelings: {feeling}</h3>
+      <h3>Understanding: {understanding}</h3>
+      <h3>Support: {support}</h3>
+      <h3>Comments: {comments}</h3>
       <form onSubmit={handleSubmit}>
         <button>Submit</button>
       </form>

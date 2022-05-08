@@ -6,7 +6,7 @@ function Understanding() {
   let dispatch = useDispatch();
   const history = useHistory();
 
-  const [understanding, setUnderstanding] = useState('');
+  const [understanding, setUnderstanding] = useState(0);
 
   const addUnderstanding = (event) => {
     event.preventDefault();
@@ -18,7 +18,7 @@ function Understanding() {
       payload: understanding,
     });
 
-    setUnderstanding('');
+    setUnderstanding(0);
 
     if (understanding > 0 && understanding <= 5) {
       goToNextPage();

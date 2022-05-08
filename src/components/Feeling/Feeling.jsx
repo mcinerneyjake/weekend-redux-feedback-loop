@@ -6,7 +6,7 @@ function Feeling() {
   let dispatch = useDispatch();
   const history = useHistory();
 
-  const [feeling, setFeeling] = useState('');
+  const [feeling, setFeeling] = useState(0);
 
   const addFeeling = (event) => {
     event.preventDefault();
@@ -18,7 +18,7 @@ function Feeling() {
       payload: feeling,
     });
 
-    setFeeling('');
+    setFeeling(0);
 
     if (feeling > 0 && feeling <= 5) {
       goToNextPage();
