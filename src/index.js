@@ -9,33 +9,21 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 const feelingReducer = (state = [], action) => {
   if (action.type === 'SET_FEELING') {
-    if (action.payload > 0 && action.payload <= 5) {
-      return [action.payload];
-    } else {
-      alert('Please select a number 1 through 5.');
-    }
+    return [action.payload];
   }
   return state;
 };
 
 const understandingReducer = (state = [], action) => {
   if (action.type === 'SET_UNDERSTANDING') {
-    if (action.payload > 0 && action.payload <= 5) {
-      return [action.payload];
-    } else {
-      alert('Please select a number 1 through 5.');
-    }
+    return [action.payload];
   }
   return state;
 };
 
 const supportReducer = (state = [], action) => {
   if (action.type === 'SET_SUPPORT') {
-    if (action.payload > 0 && action.payload <= 5) {
-      return [action.payload];
-    } else {
-      alert('Please select a number 1 through 5.');
-    }
+    return [action.payload];
   }
   return state;
 };
