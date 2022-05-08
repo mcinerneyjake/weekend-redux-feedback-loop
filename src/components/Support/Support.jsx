@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function Support() {
   let dispatch = useDispatch();
+  const history = useHistory();
 
   const [support, setSupport] = useState('');
 
@@ -15,6 +17,16 @@ function Support() {
       type: 'SET_SUPPORT',
       payload: support,
     });
+
+    setSupport('');
+
+    if (support > 0 && support <= 5) {
+      goToNextPage();
+    }
+  };
+
+  const goToNextPage = () => {
+    history.push('/comments');
   };
 
   return (

@@ -1,11 +1,14 @@
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function Review() {
   let reviewFeelings = useSelector((store) => store.feelingReducer);
   let reviewUnderstanding = useSelector((store) => store.understandingReducer);
   let reviewSupport = useSelector((store) => store.supportReducer);
   let reviewComments = useSelector((store) => store.commentReducer);
+
+  const history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,6 +33,12 @@ function Review() {
       .catch((error) => {
         console.log('Error in /feedback POST route:', error);
       });
+
+    goToNextPage();
+  };
+
+  const goToNextPage = () => {
+    history.push('/thank-you');
   };
 
   return (

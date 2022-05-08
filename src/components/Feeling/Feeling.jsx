@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function Feeling() {
   let dispatch = useDispatch();
+  const history = useHistory();
 
   const [feeling, setFeeling] = useState('');
 
@@ -15,6 +17,16 @@ function Feeling() {
       type: 'SET_FEELING',
       payload: feeling,
     });
+
+    setFeeling('');
+
+    if (feeling > 0 && feeling <= 5) {
+      goToNextPage();
+    }
+  };
+
+  const goToNextPage = () => {
+    history.push('/understanding');
   };
 
   return (

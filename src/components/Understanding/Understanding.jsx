@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function Understanding() {
   let dispatch = useDispatch();
+  const history = useHistory();
 
   const [understanding, setUnderstanding] = useState('');
 
@@ -15,6 +17,16 @@ function Understanding() {
       type: 'SET_UNDERSTANDING',
       payload: understanding,
     });
+
+    setUnderstanding('');
+
+    if (understanding > 0 && understanding <= 5) {
+      goToNextPage();
+    }
+  };
+
+  const goToNextPage = () => {
+    history.push('/support');
   };
 
   return (
