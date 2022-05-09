@@ -1,4 +1,6 @@
 import { useHistory } from 'react-router-dom';
+import { Typography } from '@mui/material';
+import Button from '@mui/material/Button';
 
 function ThankYou() {
   const history = useHistory();
@@ -10,10 +12,14 @@ function ThankYou() {
   return (
     <>
       <div className='App-header'>
-        <h1>Thank you for your feedback!</h1>
+        <Typography variant='h1' color='primary' align='center'>
+          Thanks!
+        </Typography>
         <h4>Your feedback has been submitted.</h4>
       </div>
-      <button onClick={goToNextPage}>Leave New Feedback</button>
+      <Button variant='contained' onClick={goToNextPage}>
+        Leave New Feedback
+      </Button>
     </>
   );
 }

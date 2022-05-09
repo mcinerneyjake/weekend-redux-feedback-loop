@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Typography } from '@mui/material';
 
 function Comments() {
   let dispatch = useDispatch();
@@ -28,7 +29,9 @@ function Comments() {
 
   return (
     <div>
-      <h1>Any comments you want to leave?</h1>
+      <Typography variant='h3' color='primary' align='center'>
+        Any comments you want to leave?
+      </Typography>
       <form onSubmit={addComment}>
         <p>Please enter your comments here:</p>
         <textarea

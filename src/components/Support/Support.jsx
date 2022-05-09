@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Typography } from '@mui/material';
 
 function Support() {
   let dispatch = useDispatch();
@@ -33,7 +34,9 @@ function Support() {
 
   return (
     <div>
-      <h1>How well are you being supported?</h1>
+      <Typography variant='h3' color='primary' align='center'>
+        How well are you being supported?
+      </Typography>
       <form onSubmit={addSupport}>
         <p>Please enter a number between 5 and 1 (5 High, 1 Low):</p>
         <input

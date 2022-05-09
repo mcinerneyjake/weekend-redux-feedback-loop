@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 function StartFeedback() {
   const history = useHistory();
@@ -7,7 +8,11 @@ function StartFeedback() {
     history.push('/feeling');
   };
 
-  return <button onClick={goToNextPage}>Start Feedback</button>;
+  return (
+    <Button variant='contained' onClick={goToNextPage}>
+      Start Feedback
+    </Button>
+  );
 }
 
 export default StartFeedback;
