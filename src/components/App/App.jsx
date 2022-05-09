@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import Review from '../Review/Review';
 import StartFeedback from '../StartFeedback/StartFeedback';
 import ThankYou from '../ThankYou/ThankYou';
+import RedoAnswer from '../RedoAnswer/RedoAnswer';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -26,17 +27,21 @@ function App() {
         <Route exact path='/understanding'>
           <Header />
           <Understanding />
+          <RedoAnswer />
         </Route>
         <Route exact path='/support'>
           <Header />
           <Support />
+          <RedoAnswer />
         </Route>
         <Route exact path='/comments'>
           <Header />
           <Comments />
+          <RedoAnswer />
         </Route>
         <Route exact path='/review'>
           <Review />
+          <RedoAnswer />
         </Route>
         <Route exact path='/thank-you'>
           <ThankYou />

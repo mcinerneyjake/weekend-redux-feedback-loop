@@ -22,6 +22,8 @@ function Feeling() {
 
     if (feeling > 0 && feeling <= 5) {
       goToNextPage();
+    } else {
+      alert('Please select a number between 1 and 5.');
     }
   };
 
