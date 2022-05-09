@@ -22,6 +22,8 @@ function Understanding() {
 
     if (understanding > 0 && understanding <= 5) {
       goToNextPage();
+    } else {
+      alert('Please select a number between 1 and 5.');
     }
   };
 
