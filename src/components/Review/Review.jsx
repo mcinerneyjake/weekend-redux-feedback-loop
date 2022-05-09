@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { Typography } from '@mui/material';
 
 function Review() {
   let feeling = useSelector((store) => store.feelingReducer);
@@ -44,8 +45,12 @@ function Review() {
   return (
     <>
       <div className='App-header'>
-        <h1>Review</h1>
-        <h4>Please review your submissions.</h4>
+        <Typography variant='h1' color='primary' align='center'>
+          Review
+        </Typography>
+        <Typography variant='h4' color='primary' align='center'>
+          Please review your submissions.
+        </Typography>
       </div>
       <h3>Feelings: {feeling}</h3>
       <h3>Understanding: {understanding}</h3>
